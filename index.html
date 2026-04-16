@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlas Counseling — Aly Webster, LCPC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue:   #3b8fc4;
+      --dark:   #1c1c1c;
+      --mid:    #555;
+      --muted:  #888;
+      --rule:   #e0ddd8;
+      --bg:     #f8f7f4;
+      --warm:   #f2f0eb;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 3rem; height: 68px;
+      background: rgba(248,247,244,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-logo img { height: 42px; width: auto; display: block; }
+    .nav-links { list-style: none; display: flex; align-items: center; gap: 2.75rem; }
+    .nav-links a {
+      text-decoration: none; color: var(--mid);
+      font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      font-weight: 400; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--dark); }
+    .nav-portal {
+      color: var(--dark) !important;
+      border-bottom: 1px solid var(--dark); padding-bottom: 1px;
+    }
+
+    /* HERO */
+    .hero { min-height: 100vh; padding-top: 68px; display: grid; grid-template-columns: 1fr 1fr; }
+    .hero-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 6rem 5rem 6rem 6rem;
+    }
+    .hero-name {
+      font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--muted); font-weight: 400; margin-bottom: 2.5rem;
+    }
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 4.75rem);
+      font-weight: 300; line-height: 1.1; color: var(--dark);
+      margin-bottom: 2.5rem; letter-spacing: -0.01em;
+    }
+    .hero-headline em { font-style: italic; color: var(--blue); }
+    .hero-body {
+      font-size: 0.95rem; color: var(--mid);
+      max-width: 380px; line-height: 1.9; margin-bottom: 3rem;
+    }
+    .hero-creds { margin-bottom: 3rem; display: flex; flex-direction: column; gap: 0.3rem; }
+    .hero-cred { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .hero-cta {
+      display: inline-block; text-decoration: none; color: var(--dark);
+      font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+      font-weight: 400; border-bottom: 1px solid var(--dark); padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s; align-self: flex-start;
+    }
+    .hero-cta:hover { color: var(--blue); border-color: var(--blue); }
+
+    /* hero photo panel */
+    .hero-right { position: relative; overflow: hidden; background: var(--warm); }
+    .photo-placeholder {
+      width: 100%; height: 100%; min-height: 600px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.75rem; background: var(--warm); color: var(--rule);
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .photo-placeholder svg { opacity: 0.3; }
+
+    /* DIVIDER */
+    .divider { height: 1px; background: var(--rule); margin: 0 6rem; }
+
+    /* ABOUT */
+    .about {
+      padding: 7rem 6rem; display: grid;
+      grid-template-columns: 1fr 1.4fr; gap: 7rem; align-items: start;
+    }
+    .section-label {
+      font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--muted); font-weight: 400; margin-bottom: 1.5rem;
+    }
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+      font-weight: 300; line-height: 1.25; color: var(--dark); margin-bottom: 2rem;
+    }
+    .section-heading em { font-style: italic; }
+    .section-body { font-size: 0.93rem; color: var(--mid); line-height: 1.95; margin-bottom: 1.25rem; }
+    .text-link {
+      display: inline-block; text-decoration: none; color: var(--dark);
+      font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+      border-bottom: 1px solid var(--dark); padding-bottom: 2px; margin-top: 0.75rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .text-link:hover { color: var(--blue); border-color: var(--blue); }
+
+    /* office photo */
+    .office-placeholder {
+      width: 100%; aspect-ratio: 4/5; background: var(--warm);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.75rem; color: var(--rule);
+      font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .office-placeholder svg { opacity: 0.3; }
+    .image-caption {
+      margin-top: 0.85rem; font-size: 0.7rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted); text-align: center;
+    }
+
+    /* WORK */
+    .work { background: var(--warm); padding: 6rem; }
+    .work-inner { max-width: 820px; margin: 0 auto; }
+    .work-cols {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0 5rem; margin-bottom: 2.5rem;
+    }
+    .work-item {
+      font-size: 0.88rem; color: var(--mid);
+      padding: 0.85rem 0; border-top: 1px solid var(--rule); line-height: 1.6;
+    }
+    .work-approaches { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
+    .work-approaches-list { font-size: 0.88rem; color: var(--mid); line-height: 2; }
+
+    /* PRACTICAL */
+    .practical {
+      padding: 6rem; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;
+    }
+    .practical h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+      font-weight: 300; line-height: 1.25; color: var(--dark); margin-bottom: 2rem;
+    }
+    .practical-body { font-size: 0.9rem; color: var(--mid); line-height: 1.9; margin-bottom: 1.25rem; }
+    .waitlist {
+      margin-top: 2rem; font-size: 0.88rem; color: var(--mid);
+      line-height: 1.9; padding-left: 1.25rem; border-left: 2px solid var(--blue);
+    }
+    .waitlist strong {
+      display: block; font-weight: 400; color: var(--dark); margin-bottom: 0.25rem;
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .info-row { padding: 1.5rem 0; border-top: 1px solid var(--rule); }
+    .info-row:last-child { border-bottom: 1px solid var(--rule); }
+    .info-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+    .info-value { font-size: 0.9rem; color: var(--mid); line-height: 1.8; }
+
+    /* FOOTER */
+    footer { background: var(--dark); padding: 4rem 6rem; }
+    .footer-inner {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 3rem; padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 2rem; flex-wrap: wrap;
+    }
+    .footer-logo img { height: 36px; filter: brightness(0) invert(1); opacity: 0.65; display: block; margin-bottom: 0.85rem; }
+    .footer-tagline { font-size: 0.78rem; color: rgba(255,255,255,0.3); max-width: 200px; line-height: 1.6; }
+    .footer-col h4 {
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3); font-weight: 400; margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-col a { text-decoration: none; font-size: 0.83rem; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .footer-col a:hover { color: rgba(255,255,255,0.9); }
+    .footer-tools a { color: rgba(255,255,255,0.28) !important; font-size: 0.78rem !important; }
+    .footer-tools a:hover { color: rgba(255,255,255,0.55) !important; }
+    .footer-bottom { font-size: 0.73rem; color: rgba(255,255,255,0.22); letter-spacing: 0.05em; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-name     { animation: fadeUp 0.7s 0.05s both; }
+    .hero-headline { animation: fadeUp 0.7s 0.15s both; }
+    .hero-body     { animation: fadeUp 0.7s 0.25s both; }
+    .hero-creds    { animation: fadeUp 0.7s 0.35s both; }
+    .hero-cta      { animation: fadeUp 0.7s 0.45s both; }
+
+    /* MOBILE */
+    @media (max-width: 860px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { gap: 1.25rem; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 4rem 2rem 3rem; }
+      .hero-right, .photo-placeholder { min-height: 360px; }
+      .divider { margin: 0 2rem; }
+      .about { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 2rem; }
+      .work { padding: 4rem 2rem; }
+      .work-cols { grid-template-columns: 1fr; gap: 0; }
+      .practical { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 2rem; }
+      footer { padding: 3rem 2rem; }
+      .footer-inner { flex-direction: column; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="Atlas-Counseling-logo-transparent.png" alt="Atlas Counseling" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="clinicians.html">For Clinicians</a></li>
+      <li><a href="contact.html">Getting Started</a></li>
+      <li><a href="https://atlascounselingtherapy.clientsecure.me" target="_blank" class="nav-portal">Client Portal</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-name">Aly Webster &nbsp;·&nbsp; Atlas Counseling &nbsp;·&nbsp; Ammon, Idaho</p>
+      <h1 class="hero-headline">Healing through<br /><em>connection.</em></h1>
+      <p class="hero-body">Growth comes from deepening self-awareness and healing through meaningful connection. This is a trusting, safe space where you can explore your internal patterns, process difficult experiences, and express yourself authentically.</p>
+      <div class="hero-creds">
+        <span class="hero-cred">Licensed Clinical Professional Counselor &nbsp;·&nbsp; LCPC</span>
+        <span class="hero-cred">National Board Certified Counselor &nbsp;·&nbsp; NCC</span>
+        <span class="hero-cred">EMDRIA Certified EMDR Therapist</span>
+      </div>
+      <a href="contact.html" class="hero-cta">Get in touch</a>
+    </div>
+    <div class="hero-right">
+      <!--
+        DOUG: Replace this div with your img tag:
+        <img src="images/aly-headshot.jpg" alt="Aly Webster"
+             style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+        Use the blazer headshot or a warm office portrait.
+      -->
+      <div class="photo-placeholder">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <rect x="3" y="3" width="18" height="18" rx="1"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <path d="m21 15-5-5L5 21"/>
+        </svg>
+        <span>Aly headshot</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div>
+      <p class="section-label">About Aly</p>
+      <h2 class="section-heading">A different kind of<br /><em>therapeutic space</em></h2>
+      <p class="section-body">Aly is a Certified EMDR Therapist and Certified Ketamine-Assisted Psychotherapy provider. She integrates EMDR through a parts-informed lens and is trained in Internal Family Systems, drawing from attachment-based and relational approaches.</p>
+      <p class="section-body">She works primarily with individuals navigating trauma, identity shifts, relationship wounds, and life transitions. Sessions are conversational in nature and provide space to deepen your emotional and personal narrative.</p>
+      <p class="section-body">Finding a good fit between client and therapist is vital. Feel free to reach out to explore whether working together makes sense for you.</p>
+      <a href="about.html" class="text-link">More about Aly</a>
+    </div>
+    <div>
+      <!--
+        DOUG: Replace this div with:
+        <img src="images/office-books.jpg" alt="Aly's office"
+             style="width:100%;aspect-ratio:4/5;object-fit:cover;" />
+        Use a warm bookshelf or desk photo from Aly's office.
+      -->
+      <div class="office-placeholder">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <rect x="3" y="3" width="18" height="18" rx="1"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <path d="m21 15-5-5L5 21"/>
+        </svg>
+        <span>Office / bookshelf photo</span>
+      </div>
+      <p class="image-caption">Aly's office &nbsp;·&nbsp; Ammon, Idaho</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- WORK -->
+  <section class="work">
+    <div class="work-inner">
+      <p class="section-label">Areas of Focus</p>
+      <h2 class="section-heading" style="margin-bottom:2.5rem;">What brings people to therapy</h2>
+      <div class="work-cols">
+        <div class="work-item">Trauma &amp; PTSD</div>
+        <div class="work-item">Identity &amp; Life Transitions</div>
+        <div class="work-item">Anxiety &amp; Depression</div>
+        <div class="work-item">Relationship Wounds</div>
+        <div class="work-item">Gender Identity &amp; LGBTQIA+</div>
+        <div class="work-item">Grief &amp; Loss</div>
+        <div class="work-item">Dissociation</div>
+        <div class="work-item">Spirituality &amp; Religion</div>
+        <div class="work-item">Body Image</div>
+        <div class="work-item">Betrayal Trauma</div>
+      </div>
+      <div class="work-approaches">
+        <p class="section-label">Approaches</p>
+        <p class="work-approaches-list">EMDR &nbsp;·&nbsp; Internal Family Systems (IFS) &nbsp;·&nbsp; Ketamine-Assisted Psychotherapy (KAP) &nbsp;·&nbsp; Cognitive Behavioral Therapy (CBT) &nbsp;·&nbsp; Relational Cultural Therapy &nbsp;·&nbsp; Strength-Based &nbsp;·&nbsp; Mindful Self-Compassion &nbsp;·&nbsp; Trauma-Focused</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PRACTICAL -->
+  <section class="practical">
+    <div>
+      <p class="section-label">Getting Started</p>
+      <h2>Before you reach out</h2>
+      <p class="practical-body">Aly sees clients in person in Ammon, Idaho and via telehealth. She accepts several major insurance plans and offers online payments.</p>
+      <p class="practical-body">Sessions are conversational, unhurried, and tailored to what you need. You can expect therapy with Aly to feel collaborative rather than directed.</p>
+      <div class="waitlist">
+        <strong>A note on availability</strong>
+        Aly is not currently accepting new clients and has an approximately 6-month waitlist. If you'd like to be added, reach out via the contact page.
+      </div>
+    </div>
+    <div>
+      <div class="info-row">
+        <p class="info-label">Location</p>
+        <p class="info-value">1329 Ammon Park Dr &nbsp;·&nbsp; Ammon, ID 83406<br />In-person &amp; telehealth available</p>
+      </div>
+      <div class="info-row">
+        <p class="info-label">Insurance Accepted</p>
+        <p class="info-value">BlueCross BlueShield &nbsp;·&nbsp; Aetna &nbsp;·&nbsp; PacificSource &nbsp;·&nbsp; SelectHealth &nbsp;·&nbsp; Mountain Health Co-Op &nbsp;·&nbsp; University of Utah Health Plans</p>
+      </div>
+      <div class="info-row">
+        <p class="info-label">Payment</p>
+        <p class="info-value">Online payments accepted &nbsp;·&nbsp; HSA eligible</p>
+      </div>
+      <div class="info-row">
+        <p class="info-label">Telehealth</p>
+        <p class="info-value">Available &nbsp;·&nbsp; HIPAA-compliant video sessions</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="Atlas-Counseling-logo-transparent.png" alt="Atlas Counseling" />
+        <p class="footer-tagline">Licensed counseling in Ammon, Idaho</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Getting Started</a></li>
+          <li><a href="https://atlascounselingtherapy.clientsecure.me" target="_blank">Client Portal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+12085161003">(208) 516-1003</a></li>
+          <li><a>Fax: (208) 516-1014</a></li>
+          <li><a href="contact.html">Send a message</a></li>
+          <li><a href="https://maps.google.com/?q=1329+Ammon+Park+Dr+Ammon+ID" target="_blank">1329 Ammon Park Dr, Ammon ID</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-tools">
+        <h4>Also by Aly</h4>
+        <ul>
+          <li><a href="https://valuesvaultcards.com" target="_blank">Values Vault Cards</a></li>
+          <li><a href="https://emdrcognitioncards.com" target="_blank">EMDR Cognition Cards</a></li>
+          <li><a href="https://urbantofu.com" target="_blank">Book Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2026 Atlas Counseling, LLC &nbsp;·&nbsp; Aly Webster, LCPC, NCC &nbsp;·&nbsp; Ammon, Idaho</p>
+  </footer>
+
+</body>
+</html>
