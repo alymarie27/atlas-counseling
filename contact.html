@@ -44,16 +44,17 @@
     }
     .hamburger span {
       width: 24px; height: 3px; background: var(--dark); display: block;
-      transition: transform 0.3s, opacity 0.3s;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
     }
     .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(10px, 10px);
+      transform: translateY(8px) rotate(45deg);
     }
     .hamburger.active span:nth-child(2) {
       opacity: 0;
     }
     .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
+      transform: translateY(-8px) rotate(-45deg);
     }
     .nav-links { list-style: none; display: flex; align-items: center; gap: 2.75rem; }
     .nav-links a {
@@ -248,6 +249,31 @@
     }
     .resource-name a {
       color: var(--dark); text-decoration: none;
+    }
+
+    /* LEGAL SECTION */
+    .legal-section {
+      background: var(--warm);
+      padding: 3rem 6rem;
+      margin-top: 0;
+    }
+    .legal-content {
+      max-width: 820px; margin: 0 auto;
+      font-size: 0.8rem; color: var(--muted); line-height: 1.8;
+    }
+    .legal-item {
+      margin-bottom: 1.5rem;
+    }
+    .legal-item:last-child {
+      margin-bottom: 0;
+    }
+    .legal-item a {
+      color: var(--mid); text-decoration: underline;
+      transition: color 0.2s;
+    }
+    .legal-item a:hover {
+      color: var(--dark);
+    }
       border-bottom: 1px solid var(--rule); padding-bottom: 1px;
       transition: color 0.2s, border-color 0.2s;
     }
@@ -477,6 +503,18 @@
           <p class="resource-name"><a href="https://www.psychologytoday.com/us/therapists" target="_blank">Find a Therapist &nbsp;·&nbsp; Psychology Today</a></p>
           <p class="resource-desc">Search by location, insurance, and specialty to find a therapist with current availability</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEGAL SECTION -->
+  <section class="legal-section">
+    <div class="legal-content">
+      <div class="legal-item">
+        <a href="https://d2lbv8vw960tc5.cloudfront.net/uploads/website_uploads/practice_865444/upload_421609/3-5-25_Notice_of_Privacy_Practices_for_website_TCR_compliant.pdf" target="_blank">Notice of Privacy Practices</a>
+      </div>
+      <div class="legal-item">
+        No Surprises Act — You have the right to receive a Good Faith Estimate of what your services may cost. <a href="https://www.cms.gov/nosurprises" target="_blank">Learn more about your rights</a>.
       </div>
     </div>
   </section>

@@ -44,16 +44,17 @@
     }
     .hamburger span {
       width: 24px; height: 3px; background: var(--dark); display: block;
-      transition: transform 0.3s, opacity 0.3s;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
     }
     .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(10px, 10px);
+      transform: translateY(8px) rotate(45deg);
     }
     .hamburger.active span:nth-child(2) {
       opacity: 0;
     }
     .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
+      transform: translateY(-8px) rotate(-45deg);
     }
     .nav-links { list-style: none; display: flex; align-items: center; gap: 2.75rem; }
     .nav-links a {
