@@ -47,7 +47,14 @@
     .nav-links a.active { color: var(--dark); border-bottom: 1px solid var(--dark); padding-bottom: 1px; }
     .nav-portal {
       color: var(--dark) !important;
-      border-bottom: 1px solid var(--dark); padding-bottom: 1px;
+      border: 1px solid var(--blue);
+      padding: 0.5rem 1rem;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-portal:hover {
+      background: var(--blue);
+      color: white !important;
     }
 
     /* PAGE HEADER */
@@ -280,7 +287,7 @@
     <div class="sidebar">
       <img src="images/aly-headshot-blazer-2.jpg" alt="Aly Webster" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;" />
       <div class="sidebar-block">
-        <p class="sidebar-block-label">Supervisor Credentials</p>
+        <p class="sidebar-block-label">Credentials</p>
         <div class="sidebar-cred-list">
           <div class="sidebar-cred">Licensed Clinical Professional Counselor (LCPC)</div>
           <div class="sidebar-cred">Licensed Clinical Supervisor, Idaho</div>
@@ -293,8 +300,7 @@
         <p class="sidebar-block-label">Contact</p>
         <p>
           <a href="tel:+12085161003">(208) 516-1003</a><br />
-          Fax: (208) 516-1014<br /><br />
-          <a href="contact.html">Send a message</a>
+          Fax: (208) 516-1014
         </p>
       </div>
 

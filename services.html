@@ -47,7 +47,14 @@
     .nav-links a.active { color: var(--dark); border-bottom: 1px solid var(--dark); padding-bottom: 1px; }
     .nav-portal {
       color: var(--dark) !important;
-      border-bottom: 1px solid var(--dark); padding-bottom: 1px;
+      border: 1px solid var(--blue);
+      padding: 0.5rem 1rem;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-portal:hover {
+      background: var(--blue);
+      color: white !important;
     }
 
     /* PAGE HEADER */
@@ -265,8 +272,8 @@
       <div>
         <p class="section-label">What to Expect</p>
         <h2 class="section-heading">What it's like<br /><em>in session</em></h2>
-        <p class="body-text">You don't have to come in knowing what to say or how to say it. Sessions are conversational by nature, there's no agenda you need to prepare for. Aly will follow your lead and help you make sense of what's coming up.</p>
-        <p class="body-text">Most clients start with weekly sessions. The work moves at a pace that's right for you, not on a fixed timeline.</p>
+        <p class="body-text">You don't have to come in knowing what to say or how to say it. Sessions are conversational by nature, there's no agenda you need to prepare for. Aly will follow your lead and help you make sense of what's coming up. No single modality fits everyone. The work is tailored to you, not the other way around.</p>
+        <p class="body-text">Most clients start with weekly or bi-weekly sessions. The work moves at a pace that's right for you, not on a fixed timeline.</p>
       </div>
       <div class="expect-detail">
         <div class="detail-item">
@@ -297,20 +304,11 @@
 
   <!-- OFFICE PHOTO -->
   <section style="padding: 5rem 6rem;">
-    <img src="images/office-room.jpeg" alt="Aly's office in Ammon Idaho" style="width:100%;height:auto;display:block;" />
+    <img src="images/office-room.jpeg" alt="Aly's office in Ammon Idaho" style="width:100%;max-height:500px;object-fit:cover;display:block;" />
     <p class="image-caption">Aly's office &nbsp;·&nbsp; Ammon, Idaho</p>
   </section>
 
   <div class="divider"></div>
-
-  <!-- APPROACHES -->
-  <section class="approaches">
-    <div class="approaches-inner">
-      <p class="section-label">Approaches</p>
-      <h2 class="section-heading" style="margin-bottom:0.5rem;">How I work</h2>
-      <p class="body-text" style="margin-top:1.25rem;max-width:560px;">Aly draws from a range of evidence-based approaches depending on what a client needs. No single modality fits everyone, the work is tailored to the person, not the other way around.</p>
-    </div>
-  </section>
 
   <!-- FOOTER -->
   <footer>

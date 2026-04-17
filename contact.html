@@ -47,7 +47,14 @@
     .nav-links a.active { color: var(--dark); border-bottom: 1px solid var(--dark); padding-bottom: 1px; }
     .nav-portal {
       color: var(--dark) !important;
-      border-bottom: 1px solid var(--dark); padding-bottom: 1px;
+      border: 1px solid var(--blue);
+      padding: 0.5rem 1rem;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-portal:hover {
+      background: var(--blue);
+      color: white !important;
     }
 
     /* PAGE HEADER */
@@ -307,7 +314,7 @@
 
   <!-- OFFICE PHOTO -->
   <section style="padding: 0;">
-    <img src="images/office-room.jpeg" alt="Atlas Counseling office waiting room" style="width:100%;height:auto;display:block;" />
+    <img src="images/office-waiting-room.jpeg" alt="Atlas Counseling office waiting room" style="width:100%;height:auto;display:block;" />
     <p class="image-caption" style="padding: 1rem 6rem;">Office Waiting Room &nbsp;·&nbsp; Ammon, Idaho</p>
   </section>
 

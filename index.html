@@ -46,7 +46,14 @@
     .nav-links a:hover { color: var(--dark); }
     .nav-portal {
       color: var(--dark) !important;
-      border-bottom: 1px solid var(--dark); padding-bottom: 1px;
+      border: 1px solid var(--blue);
+      padding: 0.5rem 1rem;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-portal:hover {
+      background: var(--blue);
+      color: white !important;
     }
 
     /* HERO */
