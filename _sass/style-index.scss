@@ -248,4 +248,19 @@
       .nav-portal:hover {
         background: var(--rule);
       }
+
+      .nav-portal {
+        border: 1px solid var(--blue); margin-top: 0.5rem;
+        padding: 0.5rem 0.75rem; font-size: 0.75rem;
+      }
+      .page-header-inner { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 2rem 3rem; }
+      .content { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 2rem; }
+      .sidebar { position: static; }
+      .divider { margin: 0 2rem; }
+      .training { padding: 4rem 2rem; }
+      .training-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .books { padding: 4rem 2rem; }
+      .book-grid { grid-template-columns: repeat(2, 1fr); }
+      footer { padding: 3rem 2rem; }
+      .footer-inner { flex-direction: column; gap: 2rem; }
     }
