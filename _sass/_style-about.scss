@@ -1,5 +1,19 @@
 
 
+    /* BODY TEXT */
+    .body-text {
+      font-size: 1rem; color: var(--mid); line-height: 1.95; margin-bottom: 1.25rem;
+    }
+
+    /* CONTENT SECTION */
+    .content {
+      padding: 5rem 6rem;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
     /* PAGE HEADER */
     .page-header {
       padding-top: 68px;
