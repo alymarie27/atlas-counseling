@@ -1,0 +1,93 @@
+@media (max-width: 860px) {
+
+  /* ── NAV ── */
+  nav { padding: 0 1.5rem; }
+
+  .hamburger { display: flex; }
+
+  .nav-links {
+    position: fixed;
+    top: 68px; left: 0; right: 0;
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+    background: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    border-bottom: 1px solid var(--rule);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .nav-links.active { max-height: 420px; }
+  .nav-links li { border-bottom: 1px solid var(--rule); padding: 0; }
+  .nav-links li:last-child { border-bottom: none; }
+  .nav-links a { font-size: 0.78rem; display: block; padding: 1rem 1.5rem; }
+  .nav-portal {
+    border: none;
+    background: var(--warm);
+    color: var(--dark) !important;
+    padding: 1rem 1.5rem;
+    font-size: 0.78rem;
+    width: 100%;
+    text-align: left;
+  }
+  .nav-portal:hover { background: var(--rule); }
+
+  /* ── ALL TWO-COLUMN GRIDS → SINGLE COLUMN ── */
+  .hero,
+  .about,
+  .practical,
+  .page-header-inner,
+  .content,
+  .main,
+  .training-inner,
+  .work-cols,
+  .focus,
+  .expect-inner,
+  .approaches-grid,
+  .portal-block,
+  .availability-inner,
+  .contact-info,
+  .approach-cols {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* ── SECTION PADDING ── */
+  .about,
+  .work,
+  .practical,
+  .training,
+  .books,
+  .content,
+  .focus,
+  .expect,
+  .approaches,
+  .portal-block,
+  .availability,
+  .contact-info,
+  .resources,
+  .main,
+  .approach { padding: 4rem 1.5rem; }
+
+  .page-header-inner { padding: 3rem 1.5rem; }
+  .legal-section { padding: 2.5rem 1.5rem; }
+  .divider { margin: 0 1.5rem; }
+
+  /* ── HERO SPECIFICS ── */
+  .hero { height: auto; min-height: auto; max-height: none; }
+  .hero-left { padding: 3rem 1.5rem 2.5rem; }
+  .hero-body { max-width: none; }
+  .hero-right { min-height: 300px; max-height: 420px; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: static; }
+
+  /* ── BOOKS ── */
+  .book-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* ── FOOTER ── */
+  footer { padding: 3rem 1.5rem; }
+  .footer-inner { flex-direction: column; gap: 2rem; }
+
+}

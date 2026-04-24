@@ -92,15 +92,4 @@
     .page-title   { animation: fadeUp 0.6s 0.15s both; }
     .page-intro   { animation: fadeUp 0.6s 0.2s both; }
 
-    @media (max-width: 860px) {
-      .focus {
-        grid-template-columns: 1fr;
-        padding: 4rem 1.5rem;
-        gap: 3rem;
-      }
-      .expect { padding: 4rem 1.5rem; }
-      .expect-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .approaches { padding: 4rem 1.5rem; }
-      .approaches-grid { grid-template-columns: 1fr 1fr; }
-    }
 
