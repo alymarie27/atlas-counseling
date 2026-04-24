@@ -66,7 +66,7 @@
     }
 
     /* HERO */
-    .hero { min-height: 100vh; padding-top: 68px; display: grid; grid-template-columns: 1fr 1fr; }
+    .hero { height: 85vh; min-height: 580px; max-height: 780px; padding-top: 68px; display: grid; grid-template-columns: 1fr 1fr; }
     .hero-left {
       display: flex; flex-direction: column; justify-content: center;
       padding: 6rem 5rem 6rem 6rem;
@@ -265,4 +265,31 @@
       .book-grid { grid-template-columns: repeat(2, 1fr); }
       footer { padding: 3rem 2rem; }
       .footer-inner { flex-direction: column; gap: 2rem; }
+
+      /* hero */
+      .hero {
+        height: auto; min-height: auto; max-height: none;
+        grid-template-columns: 1fr;
+      }
+      .hero-left { padding: 3rem 1.5rem 2.5rem; }
+      .hero-body { max-width: none; }
+      .hero-right { min-height: 300px; max-height: 420px; }
+
+      /* about section */
+      .about {
+        grid-template-columns: 1fr;
+        padding: 4rem 1.5rem;
+        gap: 3rem;
+      }
+
+      /* work section */
+      .work { padding: 4rem 1.5rem; }
+      .work-cols { grid-template-columns: 1fr; }
+
+      /* practical section */
+      .practical {
+        grid-template-columns: 1fr;
+        padding: 4rem 1.5rem;
+        gap: 3rem;
+      }
     }

@@ -199,4 +199,21 @@
     .page-title   { animation: fadeUp 0.6s 0.15s both; }
     .page-intro   { animation: fadeUp 0.6s 0.2s both; }
 
+    @media (max-width: 860px) {
+      .portal-block {
+        grid-template-columns: 1fr;
+        padding: 4rem 1.5rem;
+        gap: 3rem;
+      }
+      .availability { padding: 4rem 1.5rem; }
+      .availability-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-info {
+        grid-template-columns: 1fr;
+        padding: 4rem 1.5rem;
+        gap: 3rem;
+      }
+      .resources { padding: 4rem 1.5rem 4rem; }
+      .legal-section { padding: 3rem 1.5rem; }
+    }
+
     
