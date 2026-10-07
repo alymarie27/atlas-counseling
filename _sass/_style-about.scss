@@ -1,152 +1,23 @@
+/* ── ABOUT ──────────────────────────────────── */
 
+.training-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: start;
+}
+.credential-list { margin-top: 0.5rem; }
+.credential-item strong { color: var(--dark); }
 
-    /* BODY TEXT */
-    .body-text {
-      font-size: 1rem; color: var(--mid); line-height: 1.95; margin-bottom: 1.25rem;
-    }
-
-    /* CONTENT SECTION */
-    .content {
-      padding: 5rem 6rem;
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 6rem;
-      align-items: start;
-    }
-
-    /* PAGE HEADER */
-    .page-header {
-      padding-top: 68px;
-      padding-bottom: 0;
-    }
-    .page-header-inner {
-      padding: 5rem 6rem 4rem;
-      border-bottom: 1px solid var(--rule);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: end;
-    }
-    .page-eyebrow {
-      font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 1.5rem;
-    }
-    .page-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.5rem, 4vw, 4rem);
-      font-weight: 300; line-height: 1.1; color: var(--dark);
-    }
-    .page-title em { font-style: italic; color: var(--blue); }
-    .page-header-right {
-      padding-bottom: 0.5rem;
-    }
-    .page-intro {
-      font-size: 1rem; color: var(--mid); line-height: 1.95;
-      max-width: 480px;
-    }
-    /* DIVIDER */
-    .divider { height: 1px; background: var(--rule); margin: 0 6rem; }
-
-    /* TRAINING SECTION */
-    .training {
-      padding: 5rem 6rem;
-      background: var(--warm);
-    }
-    .training-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: start;
-    }
-    .credential-list {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-direction: column;
-    }
-    .credential-item {
-      font-size: 0.88rem; color: var(--mid);
-      padding: 0.9rem 0; border-top: 1px solid var(--rule); line-height: 1.6;
-    }
-    .credential-item:last-child { border-bottom: 1px solid var(--rule); }
-    .credential-item strong {
-      display: block; font-weight: 400; color: var(--dark);
-      font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
-      margin-bottom: 0.2rem;
-    }
-
-    /* SIDEBAR */
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-      position: sticky;
-      top: 88px;
-    }
-
-    /* PHOTO */
-    .sidebar-photo {
-      width: 100%;
-      aspect-ratio: 3/4;
-      background: var(--warm);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 0.75rem; color: var(--rule);
-      font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
-    }
-    .sidebar-photo svg { opacity: 0.3; }
-
-    /* CREDENTIALS SIDEBAR BLOCK */
-    .sidebar-creds {
-      padding: 1.75rem;
-      border: 1px solid var(--rule);
-    }
-    .sidebar-creds-label {
-      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 1rem;
-    }
-    .sidebar-cred-item {
-      font-size: 0.83rem; color: var(--mid);
-      padding: 0.6rem 0; border-top: 1px solid var(--rule);
-      line-height: 1.5;
-    }
-
-    /* BOOKS */
-    .books {
-      padding: 5rem 6rem;
-    }
-    .books-inner {
-      max-width: 820px;
-    }
-    .book-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .book-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .book-cover {
-      width: 100%;
-      aspect-ratio: 2/3;
-      background: var(--warm);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--rule); font-size: 0.68rem;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      text-align: center; padding: 1rem;
-      border: 1px solid var(--rule);
-    }
-    .book-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.95rem; color: var(--dark); line-height: 1.3;
-    }
-    .book-author {
-      font-size: 0.75rem; color: var(--muted); letter-spacing: 0.05em;
-    }
-    .books-note {
-      margin-top: 0.5rem;
-      font-size: 0.8rem; color: var(--muted); font-style: italic;
-    }
-
+/* books */
+.books { padding: 5rem var(--gutter) 3rem; }
+.book-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 1.5rem; margin-top: 2.5rem;
+}
+.book-item { display: flex; flex-direction: column; gap: 0.6rem; text-decoration: none; color: inherit; }
+.book-item img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; transition: transform 0.25s; }
+.book-item:hover img { transform: translateY(-3px); }
+.book-title {
+  font-family: var(--serif); font-weight: 600;
+  font-size: 1.15rem; color: var(--dark); line-height: 1.25;
+}
+.book-author { font-size: 0.875rem; color: var(--muted); margin-top: -0.35rem; }

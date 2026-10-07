@@ -1,93 +1,65 @@
+@media (max-width: 1100px) {
+  :root { --gutter: 3rem; }
+  .hero-left { padding-right: 3rem; }
+  .content, .main, .about, .practical, .page-header-inner,
+  .training-inner, .focus, .expect-inner, .portal-block,
+  .availability-inner, .contact-info { gap: 3.5rem; }
+}
+
 @media (max-width: 860px) {
+  :root { --gutter: 1.5rem; }
 
   /* ── NAV ── */
-  nav { padding: 0 1.5rem; }
-
+  nav { padding: 0 var(--gutter); }
   .hamburger { display: flex; }
-
   .nav-links {
     position: fixed;
-    top: 68px; left: 0; right: 0;
-    flex-direction: column;
-    gap: 0;
-    align-items: stretch;
-    background: white;
-    max-height: 0;
-    overflow: hidden;
+    top: var(--nav-h); left: 0; right: 0;
+    flex-direction: column; gap: 0; align-items: stretch;
+    background: #fff;
+    max-height: 0; overflow: hidden;
     transition: max-height 0.35s ease;
     border-bottom: 1px solid var(--rule);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
   .nav-links.active { max-height: 420px; }
-  .nav-links li { border-bottom: 1px solid var(--rule); padding: 0; }
+  .nav-links li { border-bottom: 1px solid var(--rule); }
   .nav-links li:last-child { border-bottom: none; }
-  .nav-links a { font-size: 0.78rem; display: block; padding: 1rem 1.5rem; }
+  .nav-links a { display: block; padding: 1rem var(--gutter); }
   .nav-portal {
-    border: none;
-    background: var(--warm);
-    color: var(--dark) !important;
-    padding: 1rem 1.5rem;
-    font-size: 0.78rem;
-    width: 100%;
-    text-align: left;
+    border: none; background: var(--warm);
+    padding: 1rem var(--gutter); width: 100%; text-align: left;
   }
-  .nav-portal:hover { background: var(--rule); }
+  .nav-portal:hover { background: var(--rule); color: var(--dark) !important; }
 
   /* ── ALL TWO-COLUMN GRIDS → SINGLE COLUMN ── */
-  .hero,
-  .about,
-  .practical,
-  .page-header-inner,
-  .content,
-  .main,
-  .training-inner,
-  .work-cols,
-  .focus,
-  .expect-inner,
-  .approaches-grid,
-  .portal-block,
-  .availability-inner,
-  .contact-info,
-  .approach-cols {
+  .hero, .about, .practical, .page-header-inner, .content, .main,
+  .training-inner, .work-cols, .focus, .expect-inner, .portal-block,
+  .availability-inner, .contact-info {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
   /* ── SECTION PADDING ── */
-  .about,
-  .work,
-  .practical,
-  .training,
-  .books,
-  .content,
-  .focus,
-  .expect,
-  .approaches,
-  .portal-block,
-  .availability,
-  .contact-info,
-  .resources,
-  .main,
-  .approach { padding: 4rem 1.5rem; }
+  .about, .practical, .band, .books, .content, .main, .focus,
+  .portal-block, .contact-info { padding-top: 4rem; padding-bottom: 4rem; }
+  .page-header-inner { padding-top: 3rem; padding-bottom: 3rem; }
 
-  .page-header-inner { padding: 3rem 1.5rem; }
-  .legal-section { padding: 2.5rem 1.5rem; }
-  .divider { margin: 0 1.5rem; }
-
-  /* ── HERO SPECIFICS ── */
-  .hero { height: auto; min-height: auto; max-height: none; }
-  .hero-left { padding: 3rem 1.5rem 2.5rem; }
-  .hero-body { max-width: none; }
-  .hero-right { min-height: 300px; max-height: 420px; }
+  /* ── HERO ── */
+  .hero { min-height: auto; }
+  .hero-left { padding: 3rem var(--gutter) 2.5rem; }
+  .hero-right { aspect-ratio: 4 / 5; max-height: 560px; }
 
   /* ── SIDEBAR ── */
   .sidebar { position: static; }
+  .work-cols { gap: 0; }
+  .work-cols .list-rows:first-child > :last-child { border-bottom: none; }
 
-  /* ── BOOKS ── */
+  /* ── PHOTOS ── */
   .book-grid { grid-template-columns: repeat(2, 1fr); }
+  .b-roll { grid-template-columns: repeat(2, 1fr); padding-bottom: 4rem; }
+  .portal-cta-block { padding: 2rem; }
 
   /* ── FOOTER ── */
-  footer { padding: 3rem 1.5rem; }
   .footer-inner { flex-direction: column; gap: 2rem; }
-
 }
