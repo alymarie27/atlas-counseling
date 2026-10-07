@@ -1,3 +1,5 @@
-title: Atlas Counseling - Alyson Webster
-description: Aly Webster, LCPC — trauma-focused therapy, EMDR and Ketamine-Assisted Psychotherapy in Ammon, Idaho, and via telehealth in Idaho and Utah.
+title: Atlas Counseling
+description: Aly Webster, LCPC — trauma-focused therapy, EMDR and Ketamine-Assisted Psychotherapy in Ammon and Idaho Falls, Idaho, and via telehealth in Idaho and Utah.
 url: https://alysonwebster.com
+plugins:
+  - jekyll-sitemap

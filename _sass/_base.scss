@@ -13,14 +13,16 @@
   --warm:   #f1eee8;
 
   --serif: 'Cormorant Garamond', Georgia, serif;
-  --sans:  'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --sans:  'Figtree', 'Helvetica Neue', Arial, sans-serif;
 
-  /* type scale */
-  --text-sm:   0.9375rem;  /* 15px — lists, captions, sidebar */
-  --text-base: 1.0625rem;  /* 17px — body copy */
-  --text-label: 0.75rem;   /* 12px — uppercase eyebrows */
+  /* type scale — grows with the screen: phone → wide desktop */
+  --text-sm:    clamp(0.9375rem, 0.9rem + 0.15vw, 1.0625rem);  /* 15 → 17px — lists, sidebar */
+  --text-base:  clamp(1.0625rem, 0.98rem + 0.3vw, 1.1875rem);  /* 17 → 19px — body copy */
+  --text-lead:  clamp(1.125rem, 1rem + 0.45vw, 1.375rem);      /* 18 → 22px — intros */
+  --text-label: 0.8125rem;                                      /* 13px — uppercase eyebrows */
 
-  --gutter: 6rem;
+  /* side padding; on wide screens it grows so content stays ~1240px wide */
+  --gutter: max(6rem, calc((100vw - 1240px) / 2));
   --nav-h: 68px;
 }
 
@@ -108,7 +110,7 @@ img { max-width: 100%; height: auto; display: block; }
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 3rem; height: var(--nav-h);
+  padding: 0 max(3rem, calc((100vw - 1240px) / 2)); height: var(--nav-h);
   background: rgba(248, 247, 244, 0.96);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--rule);
@@ -153,7 +155,7 @@ nav {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 6rem; align-items: end;
 }
-.page-intro { max-width: 480px; margin-bottom: 0.5rem; }
+.page-intro { max-width: 520px; margin-bottom: 0.5rem; font-size: var(--text-lead); }
 
 /* two-column content + sticky sidebar (About, Clinicians) */
 .content,
@@ -210,8 +212,9 @@ nav {
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--muted); text-align: center;
 }
-/* full-bleed photo band between sections */
-.photo-band img { width: 100%; height: clamp(320px, 52vw, 640px); object-fit: cover; }
+/* wide photo between sections, kept inside the content width */
+.photo-band { padding: 5rem var(--gutter); }
+.photo-band img { width: 100%; height: clamp(240px, 34vw, 480px); object-fit: cover; }
 /* square detail strip */
 .b-roll {
   padding: 2rem var(--gutter) 5rem;
