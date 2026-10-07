@@ -1,11 +1,11 @@
 /* ── HOME ───────────────────────────────────── */
 
 /* hero */
-.hero { min-height: 640px; padding-top: var(--nav-h); display: grid; grid-template-columns: 1fr 1fr; }
-.hero-left {
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 6rem 5rem 6rem var(--gutter);
+.hero {
+  padding: calc(var(--nav-h) + 4rem) var(--gutter) 3rem;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: center;
 }
+.hero-left { display: flex; flex-direction: column; justify-content: center; }
 .hero-name {
   font-size: var(--text-label); font-weight: 500;
   letter-spacing: 0.16em; text-transform: uppercase;
@@ -18,12 +18,12 @@
   margin-bottom: 2rem; letter-spacing: -0.01em;
 }
 .hero-body {
-  font-size: 1.125rem; color: var(--mid);
-  max-width: 440px; line-height: 1.7; margin-bottom: 2.25rem;
+  font-size: var(--text-lead); color: var(--mid);
+  max-width: 480px; line-height: 1.65; margin-bottom: 2.25rem;
 }
 .hero-creds { margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 0.35rem; }
-.hero-cred { font-size: 0.875rem; color: var(--muted); }
-.hero-right { position: relative; overflow: hidden; background: var(--warm); }
+.hero-cred { font-size: var(--text-sm); color: var(--muted); }
+.hero-right { position: relative; overflow: hidden; background: var(--warm); aspect-ratio: 4 / 5; max-height: 680px; }
 .hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
 
 .hero-name     { animation: fadeUp 0.7s 0.05s both; }
@@ -34,7 +34,7 @@
 
 /* about split */
 .about {
-  padding: 7rem var(--gutter); display: grid;
+  padding: 6rem var(--gutter); display: grid;
   grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: center;
 }
 .about-photo { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
@@ -49,7 +49,7 @@
 
 /* practical */
 .practical {
-  padding: 6rem var(--gutter); display: grid;
+  padding: 1rem var(--gutter) 6rem; display: grid;
   grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;
 }
 .waitlist {
@@ -62,3 +62,16 @@
   display: block; font-weight: 500; color: var(--dark); margin-bottom: 0.35rem;
   font-size: var(--text-label); letter-spacing: 0.14em; text-transform: uppercase;
 }
+
+/* tools — Aly's card decks */
+.tools { padding: 6rem var(--gutter); }
+.tools-head { max-width: 640px; margin-bottom: 3rem; }
+.tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.tool { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+.tool img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; margin-bottom: 1.5rem; transition: opacity 0.2s; }
+.tool:hover img { opacity: 0.9; }
+.tool-name { font-family: var(--serif); font-weight: 600; font-size: 1.75rem; line-height: 1.2; color: var(--dark); }
+.tool-tagline { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.4rem; color: var(--blue); margin-bottom: 0.75rem; }
+.tool-body { font-size: var(--text-base); color: var(--mid); line-height: 1.7; margin-bottom: 1rem; max-width: 52ch; }
+.tool .text-link { margin-top: auto; }
+.tool:hover .text-link { color: var(--blue); border-color: var(--blue); }

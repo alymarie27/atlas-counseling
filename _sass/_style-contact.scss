@@ -1,7 +1,8 @@
 /* ── GETTING STARTED ────────────────────────── */
 
-.contact-photo img { width: 100%; height: clamp(280px, 40vw, 500px); object-fit: cover; }
-.contact-photo .image-caption { text-align: left; padding: 0 var(--gutter); }
+.contact-photo { padding: 3.5rem var(--gutter) 0; }
+.contact-photo img { width: 100%; height: clamp(240px, 32vw, 440px); object-fit: cover; }
+.contact-photo .image-caption { text-align: left; }
 
 /* client portal — the most prominent block on the page */
 .portal-block {
