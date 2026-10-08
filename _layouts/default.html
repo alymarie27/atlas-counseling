@@ -20,6 +20,7 @@
     "name": "Atlas Counseling",
     "legalName": "Atlas Counseling, LLC",
     "url": "{{ '/' | absolute_url }}",
+    "description": "Therapy with Aly Webster, LCPC. The only physical office is in Ammon, Idaho, serving Idaho Falls. Telehealth is available to clients located in Idaho or Utah; there is no office in Utah.",
     "image": "{{ '/images/aly-yellow-chair.jpg' | absolute_url }}",
     "logo": "{{ '/images/Atlas-Counseling-logo-transparent.png' | absolute_url }}",
     "telephone": "+1-208-516-1003",
@@ -34,12 +35,57 @@
     },
     "areaServed": [
       { "@type": "City", "name": "Ammon, Idaho" },
-      { "@type": "City", "name": "Idaho Falls, Idaho" },
-      { "@type": "State", "name": "Idaho" },
-      { "@type": "State", "name": "Utah" }
+      { "@type": "City", "name": "Idaho Falls, Idaho" }
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "In-person therapy",
+          "serviceType": "Psychotherapy",
+          "areaServed": [
+            { "@type": "City", "name": "Ammon, Idaho" },
+            { "@type": "City", "name": "Idaho Falls, Idaho" }
+          ],
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "name": "In person at the Ammon, Idaho office",
+            "serviceLocation": {
+              "@type": "Place",
+              "name": "Atlas Counseling, Ammon office",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "1329 Ammon Park Dr",
+                "addressLocality": "Ammon",
+                "addressRegion": "ID",
+                "postalCode": "83406",
+                "addressCountry": "US"
+              }
+            }
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Telehealth therapy",
+          "serviceType": "Psychotherapy via telehealth",
+          "description": "Telehealth for clients located in Idaho or Utah. No physical office in Utah.",
+          "areaServed": [
+            { "@type": "State", "name": "Idaho" },
+            { "@type": "State", "name": "Utah" }
+          ],
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "name": "Telehealth (HIPAA-compliant video)"
+          }
+        }
+      }
     ],
     "medicalSpecialty": "Psychiatric",
-    "knowsAbout": ["EMDR", "Trauma therapy", "Internal Family Systems", "Ketamine-Assisted Psychotherapy", "Clinical supervision"],
+    "knowsAbout": ["EMDR", "Trauma therapy", "IFS-informed therapy", "Ketamine-Assisted Psychotherapy", "Clinical supervision"],
     "employee": {
       "@type": "Person",
       "name": "Aly Webster",

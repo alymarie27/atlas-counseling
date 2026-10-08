@@ -39,8 +39,7 @@ page_class: clinicians-page
         </div>
       </div>
 
-      <p class="body-text">If either of those sounds useful, reach out and tell me a little about where you are and what you're looking for.</p>
-      <a href="contact.html" class="text-link">Get in touch</a>
+      <p class="body-text">If either of those sounds useful, <a href="#contact">send me a note</a> and tell me a little about where you are and what you're looking for.</p>
     </div>
 
     <!-- SIDEBAR -->
@@ -50,7 +49,7 @@ page_class: clinicians-page
         <p class="sidebar-block-label">Credentials</p>
         <div class="sidebar-cred-list list-rows">
           <div class="sidebar-cred">Licensed Clinical Professional Counselor (LCPC)</div>
-          <div class="sidebar-cred">Licensed Clinical Supervisor, Idaho</div>
+          <div class="sidebar-cred">Idaho Board-Approved Supervisor</div>
           <div class="sidebar-cred">National Board Certified Counselor (NCC)</div>
           <div class="sidebar-cred">EMDRIA Certified EMDR Therapist</div>
         </div>
@@ -59,8 +58,8 @@ page_class: clinicians-page
       <div class="sidebar-block">
         <p class="sidebar-block-label">Contact</p>
         <p>
-          <a href="tel:+12085161003">(208) 516-1003</a><br />
-          Fax: (208) 516-1014
+          Clinicians are welcome to email me directly:<br />
+          <a href="mailto:{{ site.clinician_email }}">{{ site.clinician_email }}</a>
         </p>
       </div>
 
@@ -69,7 +68,7 @@ page_class: clinicians-page
         <p>Atlas Counseling, LLC<br />
         1329 Ammon Park Dr<br />
         Ammon, ID 83406<br /><br />
-        Supervision available in person and via telehealth.</p>
+        Supervision available in person in Ammon and via telehealth.</p>
       </div>
     </div>
   </section>
@@ -83,4 +82,28 @@ page_class: clinicians-page
       <h2 class="section-heading">How I work with <em>supervisees</em></h2>
       <p class="body-text">Supervision with me looks a lot like the therapy I do: relational, direct, and grounded in evidence-based approaches. I take the parallel process seriously. We'll look at the clinical work in front of you and also pay attention to how you're developing as a clinician. Individual supervision with me is a space to process what's coming up in the therapy room, work through your growth edges, and get the support you need to offer your best to your clients.</p>
     </div>
+  </section>
+
+  <!-- CLINICIAN CONTACT -->
+  <section class="clinician-contact" id="contact">
+    <div>
+      <p class="section-label">Get in Touch</p>
+      <h2 class="section-heading">Reach out about <em>supervision or mentorship</em></h2>
+      <p class="body-text">Tell me a little about where you are in your career and what you're looking for. This form opens a pre-filled email in your mail app. You can also email me directly at <a href="mailto:{{ site.clinician_email }}">{{ site.clinician_email }}</a>.</p>
+      <p class="body-text text-note">This form is for clinicians only. Please don't include any client-identifying information. If you're looking for therapy, see <a href="contact.html">Getting Started</a>.</p>
+    </div>
+    <form class="clinician-form" id="clinicianForm" data-email="{{ site.clinician_email }}">
+      <label>Name<input type="text" name="name" autocomplete="name" required /></label>
+      <label>Email<input type="email" name="email" autocomplete="email" required /></label>
+      <label>Credentials / license status<input type="text" name="credentials" placeholder="e.g. LPC, graduate student" /></label>
+      <label>I'm interested in
+        <select name="interest">
+          <option>Clinical supervision</option>
+          <option>Private practice mentorship</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label>Message<textarea name="message" rows="6" required></textarea></label>
+      <button type="submit" class="btn">Send email</button>
+    </form>
   </section>

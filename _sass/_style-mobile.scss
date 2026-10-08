@@ -2,7 +2,7 @@
   :root { --gutter: 3rem; }
   .content, .main, .about, .practical, .page-header-inner,
   .training-inner, .focus, .expect-inner, .portal-block,
-  .availability-inner, .contact-info { gap: 3.5rem; }
+  .availability-inner, .contact-info, .clinician-contact { gap: 3.5rem; }
 }
 
 @media (max-width: 860px) {
@@ -34,7 +34,7 @@
   /* ── ALL TWO-COLUMN GRIDS → SINGLE COLUMN ── */
   .hero, .about, .practical, .page-header-inner, .content, .main,
   .training-inner, .work-cols, .focus, .expect-inner, .portal-block,
-  .availability-inner, .contact-info {
+  .availability-inner, .contact-info, .clinician-contact {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }

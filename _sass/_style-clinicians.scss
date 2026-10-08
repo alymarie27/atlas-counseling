@@ -10,3 +10,29 @@
 }
 .offering-title em { font-style: italic; font-weight: 400; color: var(--blue); }
 .offering-body { font-size: var(--text-base); color: var(--mid); line-height: 1.75; }
+
+/* clinician contact form */
+.clinician-contact {
+  padding: 5rem var(--gutter);
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: start;
+}
+.clinician-contact .body-text a { color: inherit; }
+.clinician-form { display: flex; flex-direction: column; gap: 1.25rem; align-items: flex-start; }
+.clinician-form label {
+  display: flex; flex-direction: column; gap: 0.4rem; width: 100%;
+  font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--mid);
+}
+.clinician-form input,
+.clinician-form select,
+.clinician-form textarea {
+  font: inherit; font-size: var(--text-base); letter-spacing: normal; text-transform: none;
+  color: var(--dark); background: #fff;
+  border: 1px solid var(--rule); border-radius: 0;
+  padding: 0.75rem 0.9rem; width: 100%;
+}
+.clinician-form input:focus,
+.clinician-form select:focus,
+.clinician-form textarea:focus { outline: 2px solid var(--blue); outline-offset: 1px; }
+.clinician-form .btn { border: none; cursor: pointer; font-family: inherit; }
