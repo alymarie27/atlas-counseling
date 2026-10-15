@@ -9,3 +9,7 @@
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 6rem; align-items: start;
 }
+.expect-photo {
+  width: 100%; max-width: 340px; margin-top: 2.5rem;
+  aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%;
+}
