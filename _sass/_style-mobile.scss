@@ -56,6 +56,9 @@
   /* ── PHOTOS ── */
   .book-grid { grid-template-columns: repeat(2, 1fr); }
   .b-roll { grid-template-columns: repeat(2, 1fr); padding-bottom: 4rem; }
+  .detail-strip { grid-template-columns: repeat(3, 1fr); padding-bottom: 4rem; }
+  .contact-photo-pair { grid-template-columns: 1fr; }
+  .contact-photo-pair img { height: auto; aspect-ratio: 4 / 3; }
   .photo-band { padding-top: 3rem; padding-bottom: 3rem; }
   .tools { padding-top: 4rem; padding-bottom: 4rem; }
   .tools-grid { grid-template-columns: 1fr; }

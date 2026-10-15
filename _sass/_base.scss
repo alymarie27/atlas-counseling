@@ -221,6 +221,12 @@ nav {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
 }
 .b-roll img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+/* six small equal panels, texture rather than featured photos */
+.detail-strip {
+  padding: 1rem var(--gutter) 5rem;
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px;
+}
+.detail-strip img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
 
 /* ── QUOTE ──────────────────────────────────── */
 .pull-quote {
