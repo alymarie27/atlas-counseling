@@ -215,12 +215,6 @@ nav {
 /* wide photo between sections, kept inside the content width */
 .photo-band { padding: 5rem var(--gutter); }
 .photo-band img { width: 100%; height: clamp(240px, 34vw, 480px); object-fit: cover; }
-/* square detail strip */
-.b-roll {
-  padding: 2rem var(--gutter) 5rem;
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
-}
-.b-roll img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
 /* six small equal panels, texture rather than featured photos */
 .detail-strip {
   padding: 1rem var(--gutter) 5rem;

@@ -8,7 +8,7 @@
 .credential-item strong { color: var(--dark); }
 
 /* books */
-.books { padding: 5rem var(--gutter) 3rem; }
+.books { padding: 5rem var(--gutter); }
 .book-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 2rem 1.5rem; margin-top: 2.5rem;
